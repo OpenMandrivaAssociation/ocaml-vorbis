@@ -1,15 +1,15 @@
 Name:           ocaml-vorbis
 Version:        0.5.1
-Release:        %mkrel 1
+Release:        2
 Summary:        Ocaml bindings to Ogg/Vorbis
 License:        GPL
 Group:          Development/Other
 URL:            http://sourceforge.net/projects/savonet/files/
 Source0:        http://downloads.sourceforge.net/savonet/ocaml-vorbis/ocaml-vorbis-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-ogg-devel
-BuildRequires:  libvorbis-devel
+BuildRequires:  pkgconfig(vorbis)
 
 %description
 This OCaml library interfaces the vorbis C library. It can be used to
@@ -38,16 +38,12 @@ make all opt
 make doc
 
 %install
-rm -rf %{buildroot}
 export DESTDIR=%{buildroot}
 export OCAMLFIND_DESTDIR=%{buildroot}/%{_libdir}/ocaml
 export DLLDIR=$OCAMLFIND_DESTDIR/stublibs
 mkdir -p $OCAMLFIND_DESTDIR/stublibs
 mkdir -p $OCAMLFIND_DESTDIR/vorbis
 make install
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -66,4 +62,15 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/vorbis/*.cmxa
 %{_libdir}/ocaml/vorbis/*.cmx
 %{_libdir}/ocaml/vorbis/*.mli
+
+
+
+%changelog
+* Tue Jan 26 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.5.1-1mdv2010.1
++ Revision: 496518
+- update to new version 0.5.1
+
+* Fri Sep 04 2009 Florent Monnier <blue_prawn@mandriva.org> 0.5.0-1mdv2010.0
++ Revision: 430796
+- import ocaml-vorbis
 
