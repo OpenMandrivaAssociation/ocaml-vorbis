@@ -1,6 +1,6 @@
 Name:           ocaml-vorbis
 Version:        0.5.1
-Release:        2
+Release:        3
 Summary:        Ocaml bindings to Ogg/Vorbis
 License:        GPL
 Group:          Development/Other
