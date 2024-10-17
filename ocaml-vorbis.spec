@@ -4,7 +4,7 @@ Release:        3
 Summary:        Ocaml bindings to Ogg/Vorbis
 License:        GPL
 Group:          Development/Other
-URL:            http://sourceforge.net/projects/savonet/files/
+URL:            https://sourceforge.net/projects/savonet/files/
 Source0:        http://downloads.sourceforge.net/savonet/ocaml-vorbis/ocaml-vorbis-%{version}.tar.gz
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
